@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace MvcMovie.Controllers
 {
@@ -12,6 +8,13 @@ namespace MvcMovie.Controllers
         public ActionResult Index()
         {
             ViewBag.msg = "Hello! 方二";
+            return View();
+        }
+        public ActionResult Welcome(string name, string greeting = "Hi")
+        {
+            ViewBag.Name = name == null ? "!" : "," + name + "!";
+            ViewBag.Greeting = greeting;
+
             return View();
         }
     }
